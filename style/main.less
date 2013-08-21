@@ -1,0 +1,174 @@
+@screenOrientation: x;
+@aspectRatio: (4 / 3);
+
+@masterFontSize: 24px;
+@titleFontSize: (@masterFontSize * 1.5);
+@smallFontSize: (@masterFontSize * 0.75);
+@smallestFontSize: (@masterFontSize * 0.5);
+@sourceTheme: green;
+
+.contentBG () {
+  background-color: rgba(red(@sourceTheme), green(@sourceTheme), blue(@sourceTheme), 0.3)
+};
+
+.sidebarBG () {
+  background-color: rgba((red(@sourceTheme) - 20), (green(@sourceTheme) - 20), (blue(@sourceTheme) - 20), 0.5)
+};
+
+// ================  X
+// =====================
+.sideOrTop (x;) {
+  float: left;
+  width: 25%;
+  height: 100%;
+
+  .title {
+    display: block;
+    margin: 0.5em auto;
+  }
+
+  .nav {
+    float: right;
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+
+    .source {
+      width: 100%;
+      height: 20%;
+      font-size: @titleFontSize;
+      margin-bottom: 0.5em;
+      
+      .back {
+        float: left;
+        display: inline;
+        width: 0%;
+      }
+    }
+  }
+}
+.rightOrBottom(x;) {
+  width: 75%;
+  height: 100%;
+}
+
+// =========         Y
+// =====================
+.sideOrTop (y;) {
+  float: left;
+  width: 100%;
+  font-size: @masterFontSize;
+
+  .title {
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+  }
+  
+  .nav {
+    display: inline-block;
+    width: 70%;
+    margin-top: 1em;
+    height: 3em;
+
+    .source {
+      float: right;
+      width: 20%;
+      height: 100%;
+      margin: 0 2em 0 0;
+      
+      .back {
+        float: none;
+        display: block;
+        height: 50%;
+      }
+    }
+  }
+}
+.rightOrBottom(y;) {
+  width: 100%;
+  height: 100%;
+}
+
+// =============================
+// NON-MAGIC
+// =============================
+html,
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #666;
+  font-family: 'Lato', sans-serif;
+}
+
+.input-bar,
+.content-area {
+  position: relative;
+  display: inline-block;
+}
+
+.input-bar {
+  .sideOrTop(@screenOrientation);
+  // .sidebarBG;
+  background-color: #fff;
+  color: #fff;
+
+  .title {
+    font-size: @titleFontSize;
+    color: @sourceTheme;
+    text-align: center;
+    text-shadow: 1px 1px 0 black;
+  }
+
+  .nav {
+    float: right;
+
+    .sources {
+      width: 100%;
+      height: 100%;
+
+      .source {
+        text-align: center;
+        overflow: hidden;
+
+        &.chosen {
+        }
+
+        .back {
+          // .sidebarBG;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.content-area {
+  overflow-y: auto; 
+  .rightOrBottom(@screenOrientation);
+  .contentBG;
+
+  .rdioPerson {
+    display: inline-block;
+    vertical-align: top;
+    font-size: @masterFontSize;
+    width: 10%;
+    margin: 1em;
+    text-align: center;
+
+    .icon {
+      width: 100%;
+      border-radius: 100%;
+    }
+
+    .name {
+      height: 2.5em;
+    }
+  }
+}

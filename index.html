@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>KEXPRdio - KEXP charts for Rdio!</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="lib/normalize.css">
+  <link rel="stylesheet" type="text/less" href="style/main.less">
+
+  <script src="/lib/jquery-1.10.2.min.js"></script>
+  <script src="/lib/underscore-min.js"></script>
+  <script src="/lib/backbone.js"></script>
+  <script src="/lib/less-1.4.1.min.js"></script>
+  <script src="/lib/magicless.js"></script>
+  
+  <script src="/js/main.js"></script>
+  <script src="/js/chooser.js"></script>
+
+  <script src="https://rdio.com/api/api.js?client_id=wm5tzZXA_U-wuqEzqOhLNg"></script>    
+  <script src="/js/rdio-module.js"></script>
+  
+  <script src="/js/lastfm-module.js"></script>
+
+  <script src="/js/kexp-module.js"></script>
+
+  <script id="rdio-person-template" type="text/template">
+    <img class="icon" src="<%= icon500 %>">
+    <div class="info">
+      <div class="name"><%= firstName %> <%= lastName %></div>
+    </div>
+  </script>
+
+</head>
+
+<body>
+  <div class="input-bar">
+    <div class="title">List<br>Browser</div>
+    <div class="nav">
+      <div class="sources"></div>
+    </div>
+    <div class="footer"></div>
+  </div>
+  <div class="content-area"></div>
+</body>
+</html>

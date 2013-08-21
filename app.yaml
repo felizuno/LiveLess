@@ -1,0 +1,35 @@
+application: chartbrowser
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /style
+  static_dir: style
+  
+#- url: /img
+#  static_dir: img
+  
+- url: /js
+  static_dir: js
+
+- url: /img
+  static_dir: img
+  
+- url: /lib
+  static_dir: lib
+
+- url: /charts
+  static_dir: charts
+
+- url: /.*
+  script: chartbrowser.app
+  
+libraries:
+- name: webapp2
+  version: "2.5.1"
+# builtins:
+# - appstats: on
+# - deferred: on
+# - remote_api: on

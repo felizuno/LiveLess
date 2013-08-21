@@ -1,0 +1,82 @@
+.main-content {
+  position: relative;
+  float: left;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  // background-color: rgba(255, 255, 255, 0.2);
+  background-image: url('/img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+
+  @media (max-width: 768px) {
+    display: block;
+    height: 90%;
+    width: 100%;
+  }
+
+  .waiting,
+  .list-view,
+  .input-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .waiting {
+    font-size: 140px;
+    text-align: center;
+    width: 100%;
+    padding-top: 20%;
+    color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .list-view {
+    background-color: orange;
+
+    .title {
+      font-size: 48px;
+      margin: .5em auto;
+      text-align: center;
+    }
+  }
+
+  .input-overlay {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    .title,
+    .body {
+      // width: 60%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .title {
+      padding-top: 2em;
+      font-size: 48px;
+    }
+
+    .body {
+      padding: 3em;
+      font-size: 30px;
+    }
+
+    .affirm {
+      display: block;
+      width: 40%;
+      margin: 0 auto;
+      padding: 2em 0;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      border: .25em solid blue;
+      border-radius: 1em;
+    }
+  }
+}

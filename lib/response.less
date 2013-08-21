@@ -1,0 +1,94 @@
+@x: 5px;
+@y: 3px;
+@v: ((@x + @y) / 2);
+
+@masterTop: 0;
+@page: 800;
+@pageCount: 3;
+
+@bgRate: 1.2;
+@md1Rate: 2;
+@md2Rate: 0.9;
+@fgRate: 1;
+
+.boxSize (@w, @h) {
+  width: (@w * @x);
+  height: (@h * @y);
+};
+
+.boxMin (@w, @h) {
+  min-width: @w;
+  min-height: @h;
+};
+
+.boxMax (@w, @h) {
+  max-width: @w;
+  max-height:  @h;
+};
+
+.fontSize (@config) {
+  font-size: (@config * @v);
+};
+
+.flex-left,
+.flex-center,
+.flex-right {
+  display: inline-block;
+  margin: 0 auto;
+
+  .test {
+    margin: (2 * @y) (2 * @x);
+  }
+}
+
+.flex-left {
+  overflow: hidden;
+  .boxSize(15, 100);
+  background-color: #999;
+  
+  @media (max-width: 360px) {
+    .boxSize(100, 15);
+    display: block;
+    margin-bottom: (1 * @y);
+  }
+
+  .test {
+    display: block;
+    .boxMax('600px', '200px');
+    .fontSize(2.5);
+    width: 80%;
+    height: 20%;
+    overflow: hidden;
+    // height: (8 * @y);
+    margin: (2 * @y) auto;
+    background-color: #666;
+
+    @media (max-width: 360px) {
+      display: inline-block;
+      margin: (1 * @y) (1 * @x);
+      height: 80%;
+      width: 20%;
+    }
+  }
+}
+
+.flex-center {
+  .boxSize(66, 100);
+  .boxMin('600px', '400px');
+  overflow: hidden;
+  background-color: #ddd;
+
+  .test {
+    .fontSize(4);
+  }
+}
+
+.flex-right {
+  .boxSize(15, 100);
+  overflow: hidden;
+  background-color: #999;
+
+  @media (max-width: 360px) {
+    .boxSize(30, 100);
+  }
+}
